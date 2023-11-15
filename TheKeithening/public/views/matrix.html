@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keith's Escape Room Level 1</title>
+<style>
+body
+{
+  text-align: center;
+  background-color:black;
+  color:white;
+}
+fieldset
+{
+  color: white;
+  display: inline-block;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2 {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button3 {
+  background-color: #afc2e0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+<br> <br> <br> <br> <br> <br> <br> <br>
+<iframe height="600" width="900" name="iframe_a" title="Iframe Example"></iframe>
+
+<p><a href="/views/demo.html" target="iframe_a">Click</a></p>
+
+
+<form>
+  <label for="matrixCode">Enter Code</label>
+  <br>
+  <input id="matrixCode" class="button2" type="text" value="">
+  <button id="submitMatrix" class="button" type="button" onclick="matrixCheck($('#matrixCode').val())">Submit</button>
+</form>
+
+<br> <br> <br> <br>
+<button id="button" class="button" type="button" onclick="hintClicked()">Hint</button>
+<a id="nextLvlMatrix">
+<button id="nextMatrix" class="button3" type="button">Next</button>
+</a>
+<script src="js/home.js"></script>
+<script>
+
+function hintClicked() {
+$("#form").append
+("<fieldset id='field'><legend id='leg'>Please verify you are human by answering a question.</legend> <button id='start' class='button' type='button' onclick='startClicked()'>Start</button></fieldset>");
+document.getElementById("button").style.display = "none";
+  //document.getElementById("hint").innerHTML = "Use that noggin of yours.";
+}
+function startClicked(){
+  document.getElementById("leg").innerHTML = "What is the scientific name for a western lowland gorilla?";
+  $("#field").append("<input type='radio' id='option1' name='gorilla' value='option1'> <label for='option1'>Gorilla beringei</label> <input type='radio' id='option2' name='gorilla' value='option2'> <label for='option2'>Gigantopithecus</label> <input type='radio' id='option3' name='gorilla' value='option3'> <label for='option3'>Gorilla gorilla gorilla</label> <input type='radio' id='option4' name='gorilla' value='option4'> <label for='option4'>Gorilla beringei graueri</label> <br> <input id = 'submitButton' type='button' value='Submit'> ");
+  document.getElementById("start").style.display = "none";
+  $("#submitButton").click(reqHint);
+}
+function reqHint(){
+  if($("#option1").prop("checked"))
+    getHint("Gorilla beringei")
+  else if($("#option2").prop("checked"))
+    getHint("Gigantopithecus")
+  else if($("#option3").prop("checked"))
+    getHint("Gorilla gorilla gorilla")
+  else if($("#option4").prop("checked"))
+    getHint("Gorilla beringei graueri")
+}
+</script>
+
+<p id="hint"></p>
+<p id="next"></p>
+
+<form id="form">
+
+</form>
+
+
+
+</body>
+</html>

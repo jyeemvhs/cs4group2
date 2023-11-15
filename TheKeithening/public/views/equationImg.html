@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <p class="center-container">
+  Complete The Addition
+</p>
+<style>
+body
+{
+  text-align: center;
+  background-color:black;
+  color:white;
+}
+fieldset
+{
+  color: white;
+  display: inline-block;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2 {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button3 {
+  background-color: #afc2e0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(6, 80px [col-start]);
+grid-template-rows: repeat(6, 20px [row-start]);
+   justify-content: center; /* centers items horizontally */
+  /*align-items: center;  centers items vertically */
+}
+
+
+.grid-child {
+
+    width: 76px;
+  height: 116px;
+  border: 1px solid #aaaaaa;
+ 
+}  
+
+.center-container {
+  display: flex;
+ 
+    /*
+            position: static;
+           
+           
+            margin-top: 0px;
+            */
+            margin-left: 75px;
+           
+            align-items: center;
+  justify-content: center;
+            }
+
+.center-child{
+  width: 76px;
+  height: 116px;
+  border: 1px solid #aaaaaa;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.center-text{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+</style>
+<script src="js/equationImg.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body onLoad="setUp()">
+<div class="center-container">
+ 
+  <div class="center-child" id="divImg1" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+   +
+  <div class="center-child" id="divImg2" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  <p class=center-text>
+   =</p>
+   <p class="center-text">Monkey Business</p>
+</div>
+<div class="grid-container">
+  <p>
+     
+      <div class="grid-child" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+
+  </p>
+</div>
+
+<ul id="imageHold"></ul>
+<br>
+
+<img id="drag1" src="Images/bananaGun.webp" draggable="true" ondragstart="drag(event)" width="76" height="116" imgSpot="false" >
+<img id="drag2" src="Images/bananaSuitcase.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" imgSpot="false" >
+<img id="drag3" src="Images/gorilla.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" imgSpot="false" >
+<img id="drag4" src="Images/monkey.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" imgSpot="false" >
+<img id="drag5" src="Images/brianMonkey.png" draggable="true" ondragstart="drag(event)" width="76" height="116" imgSpot="false" >
+
+<div class="center-container">
+  <input class = "button" type="submit" onclick="submit()">
+  <a id="nextLvlMonkey">
+  <button id="nextMonkey" class="button3" type="button">Next</button>
+  </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+.grid-container {
+display: grid;
+grid-template-columns: repeat(6, 80px [col-start]);
+grid-template-rows: repeat(6, 20px [row-start]);
+}
+
+
+.grid-child {
+
+    width: 76px;
+  height: 116px;
+  border: 1px solid #aaaaaa;
+ 
+}  
+
+.center-container {
+width:200px;
+            height:116;
+            position: static;
+           
+           
+            margin-top: 0px;
+            margin-left: 240px;
+           
+            }

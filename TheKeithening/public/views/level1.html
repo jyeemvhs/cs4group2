@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  Drag And Drop The Images Into The Correct Place To Complete The Puzzle
+<style>
+body
+{
+  background-color:black;
+  color:white;
+}
+fieldset
+{
+  color: white;
+  display: inline-block;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2 {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button3 {
+  background-color: #afc2e0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-align: center;
+}
+.grid-container {
+text-align: center;
+display: grid;
+grid-template-columns: repeat(6, 80px [col-start]);
+grid-template-rows: repeat(6, 20px [row-start]);
+justify-content: center;
+}
+
+
+.grid-child {
+
+  width: 76px;
+  height: 116px;
+  border: 1px solid #aaaaaa;
+ 
+}  
+
+.center-container {
+display:flex;
+            margin-left: 75px;
+           align-item:center;
+           justify-content: center;
+            }
+</style>
+<script src="/js/home.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body onload="addImg()">
+
+
+<div class="grid-container">
+  <p>
+      <div class="grid-child" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  </p>
+</div>
+<div class="grid-container">
+  <p>
+      <div class="grid-child" id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div7" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div8" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div9" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div10" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  </p>
+</div>
+
+<div class="grid-container">
+  <p>
+      <div class="grid-child" id="div11" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div12" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div13" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div14" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div15" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  </p>
+</div>
+<div class="grid-container">
+  <p>
+      <div class="grid-child" id="div16" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div17" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div18" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div19" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div20" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  </p>
+</div>
+<div class="grid-container">
+  <p>
+      <div class="grid-child" id="div21" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div22" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div23" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div24" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+      <div class="grid-child" id="div25" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+  </p>
+</div>
+<div class="center-container">
+ <div class="grid-child" id="divHolder" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+</div>
+<ul id="imageHold"></ul>
+
+<img id="drag1" src="images/image_part_001.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag2" src="images/image_part_002.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag3" src="images/image_part_003.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag4" src="images/image_part_004.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag5" src="images/image_part_005.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag6" src="images/image_part_006.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag7" src="images/image_part_007.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag8" src="images/image_part_008.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag9" src="images/image_part_009.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag10" src="images/image_part_010.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag11" src="images/image_part_011.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag12" src="images/image_part_012.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag13" src="images/image_part_013.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag14" src="images/image_part_014.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag15" src="images/image_part_015.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag16" src="images/image_part_016.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag17" src="images/image_part_017.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag18" src="images/image_part_018.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag19" src="images/image_part_019.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag20" src="images/image_part_020.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag21" src="images/image_part_021.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag22" src="images/image_part_022.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag23" src="images/image_part_023.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag24" src="images/image_part_024.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+<img id="drag25" src="images/image_part_025.jpg" draggable="true" ondragstart="drag(event)" width="76" height="116" correctSpot="false" hidden>
+
+<a id="nextLvl1">
+<button id="next1" class="button3" type="button">Next</button>
+</a>
+</body>
+</html>
